@@ -17,36 +17,19 @@
   \**************************************/
 /***/ (() => {
 
-var routes = {
-  '/': '/home.html',
-  '/about': '/about.html',
-  '/contact': '/contact.html'
-};
-function fetchHTML(url) {
-  return fetch(url).then(function (response) {
-    if (!response.ok) {
-      throw new Error('Network response was not ok');
+jQuery("document").ready(function () {
+  AOS.init();
+  var swiper = new Swiper('.swiper', {
+    slidesPerView: 2,
+    spaceBetween: 32,
+    breakpoints: {
+      320: {
+        slidesPerView: 2,
+        spaceBetween: 20
+      }
     }
-    return response.text();
   });
-}
-function router() {
-  var path = window.location.hash.substring(1) || '/';
-  var appDiv = document.getElementById('app');
-  var route = "./views" + routes[path] || 0;
-  if (route) {
-    fetchHTML(route).then(function (html) {
-      appDiv.innerHTML = html;
-    })["catch"](function (error) {
-      appDiv.innerHTML = "<h1>404</h1><p>P\xE1gina n\xE3o encontrada.</p>";
-      console.error('Error fetching the HTML:', error);
-    });
-  } else {
-    appDiv.innerHTML = "<h1>404</h1><p>P\xE1gina n\xE3o encontrada.</p>";
-  }
-}
-window.addEventListener('load', router);
-window.addEventListener('hashchange', router);
+});
 
 /***/ }),
 

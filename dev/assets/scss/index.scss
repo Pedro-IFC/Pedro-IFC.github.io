@@ -501,7 +501,11 @@ body::-webkit-scrollbar-thumb {
         }
     }
 }
+body{
+	background-color: #000;
+}
 /* Pages
 ========================================================================== */
 @import 'header';
 @import 'footer';
+@import 'home';
