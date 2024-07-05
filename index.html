@@ -23,7 +23,7 @@
                     <hr>
                     <ul class="nav nav-pills flex-column mb-auto">
                         <li class="nav-item">
-                            <a href="#examples" class="nav-link active d-flex gap-3 align-items-center" aria-current="page">
+                            <a href="#examples" class="nav-link link-dark d-flex gap-3 align-items-center" aria-current="page">
                                 Examples
                             </a>
                         </li>
@@ -158,7 +158,7 @@ import interfaces.ITable;
                     <h2 class="text-black-50" id="connection">Connection</h2><br>
                     <div class="content">
                         Creates a new MySQL query builder with the provided credentials.
-                        <pre><code class="language-js">MySQLQueryBuilder mysqlC = new MySQLQueryBuilder("localhost", "3306", "root", "");</code></pre>
+                        <pre><code class="language-js">MySQLQueryBuilder mysqlC = new MySQLQueryBuilder(host, port, user, password);</code></pre>
                     </div>
                     <hr>
                     <h2 class="text-black-50" id="query-initialization">Query Initialization</h2><br>
@@ -179,11 +179,35 @@ import interfaces.ITable;
                     <h2 class="text-black-50" id="creating-columns">Creating columns</h2><br>
                     <div class="content">
                         <pre><code class="language-js">IAttr col = alunos.createAttr(colName);</code></pre>
+                        <h3 class="text-black-50">Types</h3>
+                        <h4 class="text-black-50">Integer</h4>
+                        <p></p>
+                        <pre><code class="language-js">col.integer(size);</code></pre>
+                        <h4 class="text-black-50">Varchar</h4>
+                        <p></p>
+                        <pre><code class="language-js">col.varchar(size);</code></pre>
+                        <h4 class="text-black-50">Date</h4>
+                        <p></p>
+                        <pre><code class="language-js">col.date();</code></pre>
+                        <h3 class="text-black-50">Options</h3>
+                        <h4 class="text-black-50">Unique</h4>
+                        <p></p>
+                        <pre><code class="language-js">col.unique();</code></pre>
+                        <h4 class="text-black-50">Not Null</h4>
+                        <p></p>
+                        <pre><code class="language-js">col.notnull();</code></pre>
+                        <h4 class="text-black-50">Default</h4>
+                        <p></p>
+                        <pre><code class="language-js">col.defaultProp(value);</code></pre>
                     </div>
                     <hr>
                     <h2 class="text-black-50" id="creating-primary-keys">Creating primary keys</h2><br>
                     <div class="content">
-                        <pre><code class="language-js">IPrimaryKey pk = alunos.createPrimaryKey(col);</code></pre>
+                        <pre><code class="language-js">IPrimaryKey pk = table.createPrimaryKey(col);</code></pre>
+                        <h3 class="text-black-50">Options</h3>
+                        <h4 class="text-black-50">Auto Increment</h4>
+                        <p></p>
+                        <pre><code class="language-js">pk.autoincrement();</code></pre>
                     </div>
                     <hr>
                     <h2 class="text-black-50" id="creating-foreign-keys">Creating foreign keys</h2><br>
@@ -193,7 +217,9 @@ import interfaces.ITable;
                     <hr>
                     <h2 class="text-black-50" id="creating-associative-tables">Creating associative tables</h2><br>
                     <div class="content">
-                        <pre><code class="language-js">MySQLQueryBuilder mysqlC = new MySQLQueryBuilder("localhost", "3306", "root", "");</code></pre>
+                        <pre><code class="language-js">ITable table = db.createTable(name);
+table.createForeignKey(otherTable.createPrimaryKey(col), table.createAttr(col).integer(8));
+table.createForeignKey(anotherTable.createPrimaryKey(col2), table.createAttr(col).integer(8));</code></pre>
                     </div>
                 </div>
             </div>
