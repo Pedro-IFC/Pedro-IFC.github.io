@@ -1081,8 +1081,12 @@ body {
 .initial-page {
   background-color: #000;
   min-height: 100vh;
-  width: 100vw;
+  width: 99vw;
   overflow: hidden;
+}
+
+body {
+  background-color: #000;
 }
 
 html {
