@@ -19,6 +19,9 @@
 
 jQuery("document").ready(function () {
   AOS.init();
+  $('.initial-page .nav-link').on("click", function(){
+    $(this).addClass("active");
+  });
   var swiper = new Swiper('.swiper', {
     slidesPerView: 2,
     spaceBetween: 32,

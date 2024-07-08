@@ -19,6 +19,33 @@
 
 jQuery("document").ready(function () {
   AOS.init();
+  var textElements = document.querySelectorAll('.separate-letters');
+  textElements.forEach(function (textElement) {
+    var text = textElement.textContent;
+    textElement.innerHTML = '';
+    text.split('').forEach(function (letter) {
+      var span = document.createElement('span');
+      span.textContent = letter;
+      textElement.appendChild(span);
+    });
+  });
+  var sections = document.querySelectorAll('h2');
+  var navLinks = document.querySelectorAll('.nav-link');
+  window.addEventListener('scroll', function () {
+    var current = '';
+    sections.forEach(function (section) {
+      var sectionTop = section.offsetTop;
+      if (pageYOffset >= sectionTop - 200) {
+        current = section.getAttribute('id');
+      }
+    });
+    navLinks.forEach(function (link) {
+      link.classList.remove('active');
+      if (link.getAttribute('href').substring(1) === current) {
+        link.classList.add('active');
+      }
+    });
+  });
   var swiper = new Swiper('.swiper', {
     slidesPerView: 2,
     spaceBetween: 32,
