@@ -1,0 +1,73 @@
+.lateral{
+    position: fixed;
+    left: -300px;
+    top: 0px;
+    width: 300px;
+    height: 100vh;
+    background-color: #fff;
+    padding: 40px;
+    z-index: 31;
+    transition: all .3s;
+    ul{
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        li{
+            width: 100%;
+            a{
+                color: #000;
+                font-family: "Poppins";
+                font-size: 20px;
+                font-weight: 500;
+                line-height: 140%; 
+                transition: all .3s;
+                width: 100%;
+                padding: 0;
+                position: relative;
+                &::after{
+                    content: "";
+                    width: 0;
+                    height: 2px;
+                    background-color: rgb(204, 0, 0);
+                    transition: all .3s;
+                    position: absolute;
+                    left: 0;
+                    top: auto;
+                    bottom: 0;
+                }
+                &:hover, &.active{
+                    color: rgb(204, 0, 0);
+                    &::after{
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+    &.active{
+        left: 0px;
+    }
+}
+.menu-icon{
+    width: 50px;
+    height: 50px;
+    left: 30px;
+    top: 30px;
+    position: fixed;
+    font-size: 30px;
+    color: #000;
+    background-color: #fff;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 31;
+    cursor: pointer;
+    border: 2px solid #FFF;
+    transition: all .3s;
+    &:hover{
+        color: #fff;
+        background-color: #000;
+    }
+}

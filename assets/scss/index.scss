@@ -504,6 +504,16 @@ body::-webkit-scrollbar-thumb {
 body{
 	background-color: #000;
 }
+.pointer-background{
+	position: fixed;
+    transition-duration: .3s;
+	z-index: 30;
+	left: 0;
+	top: 0;
+	width: 100vw;
+	height: 100vh;
+    pointer-events: none;
+}
 /* Pages
 ========================================================================== */
 @import 'header';

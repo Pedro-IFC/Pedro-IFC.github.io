@@ -3,12 +3,18 @@
     min-height: 100vh;
     width: 99vw;
     overflow: hidden;
+    transition: all .3s;
+    &.recuo{
+        margin-left: 350px;
+        width: calc(99vw - 350px);
+    }
 }
 html{
+    background-color: #000;
     scroll-behavior: smooth;
 }
 body {
-    background-color: #121212;
+    background-color: #000!important;
     color: #e0e0e0;
 }
 .bg-dark-gray {
@@ -44,14 +50,9 @@ body {
             text-transform: uppercase;
             font-weight: 700;
             transition: all .3s;
+            color: rgb(109, 0, 0);
             &:hover{
                 transform: scale(1.1);
-            }
-            >*{
-                transition: all .3s;
-                &:hover{
-                    opacity: 0.5;
-                }
             }
         }
         .right{
@@ -68,4 +69,7 @@ body {
             }
         }
     }
+}
+.sobre-mim{
+
 }

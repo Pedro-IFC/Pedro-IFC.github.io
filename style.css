@@ -1074,8 +1074,94 @@ body {
   background-color: #000;
 }
 
+.pointer-background {
+  position: fixed;
+  transition-duration: 0.3s;
+  z-index: 30;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+}
+
 /* Pages
 ========================================================================== */
+.lateral {
+  position: fixed;
+  left: -300px;
+  top: 0px;
+  width: 300px;
+  height: 100vh;
+  background-color: #fff;
+  padding: 40px;
+  z-index: 31;
+  transition: all 0.3s;
+}
+.lateral ul {
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.lateral ul li {
+  width: 100%;
+}
+.lateral ul li a {
+  color: #000;
+  font-family: "Poppins";
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 140%;
+  transition: all 0.3s;
+  width: 100%;
+  padding: 0;
+  position: relative;
+}
+.lateral ul li a::after {
+  content: "";
+  width: 0;
+  height: 2px;
+  background-color: rgb(204, 0, 0);
+  transition: all 0.3s;
+  position: absolute;
+  left: 0;
+  top: auto;
+  bottom: 0;
+}
+.lateral ul li a:hover, .lateral ul li a.active {
+  color: rgb(204, 0, 0);
+}
+.lateral ul li a:hover::after, .lateral ul li a.active::after {
+  width: 100%;
+}
+.lateral.active {
+  left: 0px;
+}
+
+.menu-icon {
+  width: 50px;
+  height: 50px;
+  left: 30px;
+  top: 30px;
+  position: fixed;
+  font-size: 30px;
+  color: #000;
+  background-color: #fff;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 31;
+  cursor: pointer;
+  border: 2px solid #FFF;
+  transition: all 0.3s;
+}
+.menu-icon:hover {
+  color: #fff;
+  background-color: #000;
+}
+
 /* Footer
 ========================================================================== */
 .initial-page {
@@ -1083,14 +1169,20 @@ body {
   min-height: 100vh;
   width: 99vw;
   overflow: hidden;
+  transition: all 0.3s;
+}
+.initial-page.recuo {
+  margin-left: 350px;
+  width: calc(99vw - 350px);
 }
 
 html {
+  background-color: #000;
   scroll-behavior: smooth;
 }
 
 body {
-  background-color: #121212;
+  background-color: #000 !important;
   color: #e0e0e0;
 }
 
@@ -1134,15 +1226,10 @@ body {
   text-transform: uppercase;
   font-weight: 700;
   transition: all 0.3s;
+  color: rgb(109, 0, 0);
 }
 .top .container .left:hover, .top .container .right:hover {
   transform: scale(1.1);
-}
-.top .container .left > *, .top .container .right > * {
-  transition: all 0.3s;
-}
-.top .container .left > *:hover, .top .container .right > *:hover {
-  opacity: 0.5;
 }
 .top .container .right {
   text-align: right;

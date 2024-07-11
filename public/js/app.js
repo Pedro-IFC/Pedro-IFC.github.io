@@ -19,17 +19,7 @@
 
 jQuery("document").ready(function () {
   AOS.init();
-  var textElements = document.querySelectorAll('.separate-letters');
-  textElements.forEach(function (textElement) {
-    var text = textElement.textContent;
-    textElement.innerHTML = '';
-    text.split('').forEach(function (letter) {
-      var span = document.createElement('span');
-      span.textContent = letter;
-      textElement.appendChild(span);
-    });
-  });
-  var sections = document.querySelectorAll('h2');
+  var sections = document.querySelectorAll('h2, section');
   var navLinks = document.querySelectorAll('.nav-link');
   window.addEventListener('scroll', function () {
     var current = '';
@@ -54,6 +44,27 @@ jQuery("document").ready(function () {
         slidesPerView: 2,
         spaceBetween: 20
       }
+    }
+  });
+
+  //Efeito background
+
+  document.addEventListener('mousemove', function () {
+    var x = event.clientX;
+    var y = event.clientY;
+    jQuery(".pointer-background").css("background", "radial-gradient(600px at " + x + "px " + y + "px, rgba(255, 255, 255, 0.05), transparent 80%)");
+  });
+
+  //Menu
+
+  jQuery(".menu-icon").on("click", function () {
+    jQuery(".lateral").addClass("active");
+    jQuery(".initial-page").addClass("recuo");
+  });
+  jQuery(document).on('click', function (event) {
+    if (!jQuery(event.target).closest('.menu-icon').length) {
+      jQuery(".lateral").removeClass("active");
+      jQuery(".initial-page").removeClass("recuo");
     }
   });
 });
