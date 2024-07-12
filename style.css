@@ -557,6 +557,33 @@
 ========================================================================== */
 /* Resets
 ========================================================================== */
+::-webkit-scrollbar {
+  width: 12px; /* Largura da barra de rolagem */
+  height: 12px; /* Altura da barra de rolagem (para rolagem horizontal) */
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1 !important;
+  border-radius: 10px !important;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888 !important;
+  border-radius: 10px !important;
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: #555 !important;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555 !important;
+}
+
+::-webkit-scrollbar-corner {
+  background: #f1f1f1 !important;
+}
+
 *,
 *:before,
 *:after {
@@ -583,7 +610,7 @@
   color: #3A3A3A;
 }
 .entry-title h1 span {
-  color: #000;
+  color: rgb(109, 0, 0);
   font-weight: 800;
 }
 
@@ -601,17 +628,17 @@
   }
 }
 #search-form #search-submit {
-  border: 1px solid #000;
+  border: 1px solid rgb(109, 0, 0);
   padding: 4px 14px;
   border-radius: 8px;
-  background-color: #000;
+  background-color: rgb(109, 0, 0);
   color: white;
   transition: all 0.3s;
   cursor: pointer;
 }
 #search-form #search-submit:hover {
   background-color: white;
-  color: #000;
+  color: rgb(109, 0, 0);
 }
 #search-form label {
   width: 100%;
@@ -619,7 +646,7 @@
 #search-form input {
   width: 100%;
   border: none;
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid rgb(109, 0, 0);
   padding: 5px 0px;
   background-color: white;
   font-style: normal;
@@ -627,10 +654,10 @@
   font-size: 18px;
   line-height: 25px;
   font-family: "Rubik";
-  color: #000;
+  color: rgb(109, 0, 0);
 }
 #search-form input::-moz-placeholder {
-  color: #000;
+  color: rgb(109, 0, 0);
   font-style: normal;
   font-weight: 300;
   font-size: 18px;
@@ -638,7 +665,7 @@
   font-family: "Rubik";
 }
 #search-form input::placeholder {
-  color: #000;
+  color: rgb(109, 0, 0);
   font-style: normal;
   font-weight: 300;
   font-size: 18px;
@@ -830,19 +857,19 @@ textarea {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: #000;
+  color: rgb(109, 0, 0);
 }
 .load_more .page-numbers:not(span) {
   transition: all 0.3s;
 }
 .load_more .page-numbers:not(span):hover {
-  color: #000;
+  color: rgb(109, 0, 0);
 }
 .load_more .page-numbers.current {
-  background: #000;
+  background: rgb(109, 0, 0);
   font-family: "Rubik";
   font-weight: 600;
-  color: #fff;
+  color: orangered;
   width: 32px;
   height: 32px;
   border-radius: 50%;
@@ -912,10 +939,10 @@ body::-webkit-scrollbar-track {
 }
 
 body::-webkit-scrollbar-thumb {
-  background: #000;
+  background: rgb(109, 0, 0);
 }
 body::-webkit-scrollbar-thumb:hover {
-  background: black;
+  background: #1b0000;
 }
 
 /* Mobmenu Classes
@@ -929,7 +956,7 @@ body::-webkit-scrollbar-thumb:hover {
   top: 0 !important;
   right: 2% !important;
   z-index: 0 !important;
-  background: #000;
+  background: rgb(109, 0, 0);
   padding: 10px 10px 0px 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
@@ -1375,4 +1402,103 @@ body {
 
 .nontext {
   text-transform: none !important;
+}
+
+.bloco-linha-do-tempo {
+  overflow: hidden;
+  overflow-y: scroll;
+  height: 50vh;
+  width: 50%;
+  direction: rtl;
+}
+
+.timeline {
+  margin: 20px auto;
+  padding: 20px;
+}
+
+.card-time {
+  position: relative;
+  max-width: 400px;
+}
+.card-time:nth-child(odd) {
+  padding: 30px 0 30px 30px;
+}
+.card-time:nth-child(odd)::before {
+  left: 0px;
+  top: -4.5px;
+  bottom: -4.5px;
+  border-width: 5px 0 5px 5px;
+  border-radius: 50px 0 0 50px;
+}
+@media only screen and (max-width: 400px) {
+  .card-time:nth-child(odd)::before {
+    top: -5px;
+    bottom: -5px;
+  }
+}
+.card-time:nth-child(even) {
+  padding: 30px 30px 30px 0;
+}
+.card-time:nth-child(even)::before {
+  right: 0;
+  top: 0;
+  bottom: 0;
+  border-width: 5px 5px 5px 0;
+  border-radius: 0 50px 50px 0;
+}
+.card-time:nth-child(even) > .info > .title {
+  text-align: right;
+}
+.card-time:nth-child(even) > .info > .title::before {
+  left: auto;
+  right: -45px;
+}
+.card-time::before {
+  content: "";
+  position: absolute;
+  width: 50%;
+  border: solid orangered;
+}
+.card-time:first-child::before {
+  border-top: 0;
+  border-top-left-radius: 0;
+}
+.card-time:last-child:nth-child(odd)::before {
+  border-bottom: 0;
+  border-bottom-left-radius: 0;
+}
+.card-time:last-child:nth-child(even)::before {
+  border-bottom: 0;
+  border-bottom-right-radius: 0;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  background: #333;
+  color: gray;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.title {
+  color: orangered;
+  position: relative;
+  font-size: 32px;
+}
+.title::before {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: white;
+  top: 8px;
+  border-radius: 999px;
+  border: 3px solid orangered;
+  left: -45px;
+}
+.card:nth-child(odd) .title::before {
+  right: -45px;
 }

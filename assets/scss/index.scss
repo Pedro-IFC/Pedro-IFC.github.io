@@ -24,13 +24,13 @@ $al_container: 1230px;
 $al_sidebar: 300px;
 $font_pattern: 'Rubik';
 // Colors
-$primary-color: #000;
-$secondary-color: #fff;
 $tertiary-color: #ccc;
 
-$white: #fff;
-$black: #000;
-
+$primary-color: rgb(109, 0, 0);
+$secondary-color: orangered;
+$black:#000;
+$grey:#e0e0e0;
+$white:#fff;
 $danger: #dc3545;
 $success: #28a745;
 
@@ -40,6 +40,27 @@ $success: #28a745;
 
 /* Resets
 ========================================================================== */
+::-webkit-scrollbar {
+	width: 12px; /* Largura da barra de rolagem */
+	height: 12px; /* Altura da barra de rolagem (para rolagem horizontal) */
+}
+::-webkit-scrollbar-track {
+	background: #f1f1f1!important; 
+	border-radius: 10px!important;
+}
+::-webkit-scrollbar-thumb {
+	background: #888!important; 
+	border-radius: 10px!important;
+}
+::-webkit-scrollbar-thumb:active {
+    background: #555!important; 
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #555!important; 
+}
+::-webkit-scrollbar-corner {
+    background: #f1f1f1!important;
+}
 *,
 *:before,
 *:after {
