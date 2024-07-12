@@ -35,20 +35,20 @@ body {
 .top{
     width: 100%;
     color: #FFF;
-    min-height: 100vh;
+    padding: 50px 0px;
     display: flex;
     align-items: center;
     cursor: default;
     .container{
-        min-height: 80vh;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        .left, .right{
+        .left, .right, .name{
             font-family: "Inconsolata";
             font-size: 10vw;
             text-transform: uppercase;
             font-weight: 700;
+            line-height: 8vw;
             transition: all .3s;
             color: rgb(109, 0, 0);
             width: fit-content;
@@ -56,18 +56,35 @@ body {
                 transform: scale(1.1);
             }
         }
-        .right{
+        .right, .name{
             margin-left: auto;
             text-align: right;
         }
+        .name{
+            padding-top: 40px;
+            color: #FFF;
+            font-size: 8vw;
+        }
         .center{
-            font-family: "Poppins";
-            font-size: 20px;
-            font-weight: 400;
-            line-height: 140%; 
-            transition: all .3s;
-            &:hover{
-                transform: scale(1.1);
+            h2{
+                padding-bottom: 12px;
+            }
+            .swiper{
+                a{
+                    display: block;
+                    width: 48px;
+                    height: 48px;
+                    background-color: rgb(36, 41, 56);
+                    border-radius: 12px;
+                    &.pad{
+                        padding: 8px;
+                    }
+                    img{
+                        width: 100%;
+                        height: 100%;
+                        object-fit: contain;
+                    }
+                }
             }
         }
     }
@@ -95,4 +112,7 @@ body {
             }
         }
     }
+}
+.nontext{
+    text-transform: none!important;
 }

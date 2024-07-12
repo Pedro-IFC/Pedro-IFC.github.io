@@ -1146,20 +1146,18 @@ body {
   top: 30px;
   position: fixed;
   font-size: 30px;
-  color: #000;
-  background-color: #fff;
+  color: #fff;
   border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 31;
   cursor: pointer;
-  border: 2px solid #FFF;
   transition: all 0.3s;
 }
 .menu-icon:hover {
-  color: #fff;
-  background-color: #000;
+  color: #000;
+  background-color: #fff;
 }
 
 /* Footer
@@ -1209,43 +1207,57 @@ body {
 .top {
   width: 100%;
   color: #FFF;
-  min-height: 100vh;
+  padding: 50px 0px;
   display: flex;
   align-items: center;
   cursor: default;
 }
 .top .container {
-  min-height: 80vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-.top .container .left, .top .container .right {
+.top .container .left, .top .container .right, .top .container .name {
   font-family: "Inconsolata";
   font-size: 10vw;
   text-transform: uppercase;
   font-weight: 700;
+  line-height: 8vw;
   transition: all 0.3s;
   color: rgb(109, 0, 0);
   width: -moz-fit-content;
   width: fit-content;
 }
-.top .container .left:hover, .top .container .right:hover {
+.top .container .left:hover, .top .container .right:hover, .top .container .name:hover {
   transform: scale(1.1);
 }
-.top .container .right {
+.top .container .right, .top .container .name {
   margin-left: auto;
   text-align: right;
 }
-.top .container .center {
-  font-family: "Poppins";
-  font-size: 20px;
-  font-weight: 400;
-  line-height: 140%;
-  transition: all 0.3s;
+.top .container .name {
+  padding-top: 40px;
+  color: #FFF;
+  font-size: 8vw;
 }
-.top .container .center:hover {
-  transform: scale(1.1);
+.top .container .center h2 {
+  padding-bottom: 12px;
+}
+.top .container .center .swiper a {
+  display: block;
+  width: 48px;
+  height: 48px;
+  background-color: rgb(36, 41, 56);
+  border-radius: 12px;
+}
+.top .container .center .swiper a.pad {
+  padding: 8px;
+}
+.top .container .center .swiper a img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .sobre-mim {
@@ -1269,4 +1281,8 @@ body {
 }
 .sobre-mim .container .left-right .left, .sobre-mim .container .left-right .right {
   width: calc(50% - 30px);
+}
+
+.nontext {
+  text-transform: none !important;
 }

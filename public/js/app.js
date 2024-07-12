@@ -37,13 +37,18 @@ jQuery("document").ready(function () {
     });
   });
   var swiper = new Swiper('.swiper', {
-    slidesPerView: 2,
-    spaceBetween: 32,
+    slidesPerView: 12,
+    spaceBetween: 12,
+    loop: true,
     breakpoints: {
-      320: {
-        slidesPerView: 2,
-        spaceBetween: 20
+      1200: {
+        slidesPerView: 12,
+        spaceBetween: 12
       }
+    },
+    speed: 500,
+    autoplay: {
+      delay: 1000
     }
   });
 

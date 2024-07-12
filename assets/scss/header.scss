@@ -56,18 +56,16 @@
     top: 30px;
     position: fixed;
     font-size: 30px;
-    color: #000;
-    background-color: #fff;
+    color: #fff;
     border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 31;
     cursor: pointer;
-    border: 2px solid #FFF;
     transition: all .3s;
     &:hover{
-        color: #fff;
-        background-color: #000;
+        color: #000;
+        background-color: #fff;
     }
 }
