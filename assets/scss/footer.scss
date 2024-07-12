@@ -1,2 +1,94 @@
 /* Footer
 ========================================================================== */
+.main-footer{
+    .container{
+        background-color: #fff;
+        border-radius: 30px 30px 0px 0px;
+        padding: 30px;
+
+        display: flex;
+        flex-wrap: wrap;
+        gap: 32px;
+        align-items: center;
+        justify-content: space-between;   
+        h3{
+            color: #000;
+            font-family: "Inconsolata";
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+        .left{ 
+            font-family: "Inconsolata";
+            color: #000;
+            ul{
+                padding-left: 15px;
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+                gap: 8px;
+            }
+            a{
+                color: #000;
+                text-decoration: none;
+                position: relative;
+                &::after{
+                    content: "";
+                    width: 0;
+                    height: 2px;
+                    background-color: rgb(204, 0, 0);
+                    transition: all .3s;
+                    position: absolute;
+                    left: 0;
+                    top: auto;
+                    bottom: 0;
+                }
+                &:hover, &.active{
+                    color: rgb(204, 0, 0);
+                    &::after{
+                        width: 100%;
+                    }
+                }
+            }
+        }
+        .redes{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            width: calc(52px * 2 + 16px);
+            >a{
+                width: 52px;
+                height: 52px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 10px;
+                border-radius: 12px;
+                transition: all .3s;
+                background-color: rgb(109, 0, 0);
+                border: 2px solid rgb(109, 0, 0);
+                svg{
+                    object-fit: contain;
+                    width: 32px;
+                    height: 32px;
+                    fill:#fff!important;
+                    stroke:#fff!important;
+                    transition: all .3s;
+                    *{
+                        transition: all .3s;
+                        fill:#fff!important;
+                        stroke:#fff!important;
+                    }
+                }
+                &:hover{
+                    background-color: #fff;
+                    svg{
+                        *{
+                            fill: rgb(109, 0, 0)!important;
+                            stroke: rgb(109, 0, 0)!important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

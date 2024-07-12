@@ -40,6 +40,7 @@ body {
     align-items: center;
     cursor: default;
     .container{
+        min-height: 80vh;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
