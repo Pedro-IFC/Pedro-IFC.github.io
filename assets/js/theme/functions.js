@@ -8,7 +8,7 @@ jQuery("document").ready(function(){
     let current = '';
     sections.forEach(section => {
       const sectionTop = section.offsetTop;
-      if (pageYOffset >= sectionTop - 200) {
+      if (pageYOffset >= (sectionTop )) {
         current = section.getAttribute('id');
       }
     });

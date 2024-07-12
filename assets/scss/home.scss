@@ -5,8 +5,8 @@
     overflow: hidden;
     transition: all .3s;
     &.recuo{
-        margin-left: 350px;
-        width: calc(99vw - 350px);
+        padding-left: 350px;
+        width: calc(99vw);
     }
 }
 html{
@@ -51,11 +51,13 @@ body {
             font-weight: 700;
             transition: all .3s;
             color: rgb(109, 0, 0);
+            width: fit-content;
             &:hover{
                 transform: scale(1.1);
             }
         }
         .right{
+            margin-left: auto;
             text-align: right;
         }
         .center{
@@ -71,5 +73,26 @@ body {
     }
 }
 .sobre-mim{
-
+    padding: 40px 0px;
+    font-family: "Poppins";
+    color: #FFF;
+    .container{
+        h2{
+            font-family: "Inconsolata";
+            font-size: 48px;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: rgb(109, 0, 0);
+        }
+        .left-right{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            .left, .right{
+                width: calc(50% - 30px);
+            }
+        }
+    }
 }
