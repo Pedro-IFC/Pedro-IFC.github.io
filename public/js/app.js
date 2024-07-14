@@ -25,7 +25,7 @@ jQuery("document").ready(function () {
     var current = '';
     sections.forEach(function (section) {
       var sectionTop = section.offsetTop;
-      if (pageYOffset >= sectionTop) {
+      if (pageYOffset >= sectionTop - 200) {
         current = section.getAttribute('id');
       }
     });
