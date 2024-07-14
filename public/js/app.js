@@ -60,16 +60,11 @@ jQuery("document").ready(function () {
       delay: 1000
     }
   });
-  //Efeito background
-
   document.addEventListener('mousemove', function () {
     var x = event.clientX;
     var y = event.clientY;
     jQuery(".pointer-background").css("background", "radial-gradient(600px at " + x + "px " + y + "px, rgba(255, 255, 255, 0.05), transparent 80%)");
   });
-
-  //Menu
-
   jQuery(".menu-icon").on("click", function () {
     jQuery(".lateral").addClass("active");
     jQuery(".initial-page").addClass("recuo");

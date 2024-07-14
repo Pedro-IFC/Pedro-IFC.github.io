@@ -2,24 +2,22 @@
 ========================================================================== */
 .main-footer{
     .container{
-        background-color: #fff;
+        background-color: $secondary-color;
         border-radius: 30px 30px 0px 0px;
         padding: 30px;
-
         display: flex;
         flex-wrap: wrap;
         gap: 32px;
         align-items: center;
         justify-content: space-between;   
+        color: $white;
         h3{
-            color: $black;
             font-family: "Inconsolata";
             text-transform: uppercase;
             font-weight: 700;
         }
         .left{ 
             font-family: "Inconsolata";
-            color: $black;
             ul{
                 padding-left: 15px;
                 display: flex;
@@ -28,14 +26,14 @@
                 gap: 8px;
             }
             a{
-                color: $black;
+                color: $white;
                 text-decoration: none;
                 position: relative;
                 &::after{
                     content: "";
                     width: 0;
                     height: 2px;
-                    background-color: rgb(204, 0, 0);
+                    background-color: $primary-color;
                     transition: all .3s;
                     position: absolute;
                     left: 0;
@@ -43,7 +41,7 @@
                     bottom: 0;
                 }
                 &:hover, &.active{
-                    color: rgb(204, 0, 0);
+                    color: $primary-color;
                     &::after{
                         width: 100%;
                     }
@@ -70,17 +68,17 @@
                     object-fit: contain;
                     width: 32px;
                     height: 32px;
-                    fill:#fff!important;
-                    stroke:#fff!important;
+                    fill:$secondary-color!important;
+                    stroke:$secondary-color!important;
                     transition: all .3s;
                     *{
                         transition: all .3s;
-                        fill:#fff!important;
-                        stroke:#fff!important;
+                        fill:$secondary-color!important;
+                        stroke:$secondary-color!important;
                     }
                 }
                 &:hover{
-                    background-color: #fff;
+                    background-color: $secondary-color;
                     svg{
                         *{
                             fill: $primary-color!important;

@@ -134,6 +134,7 @@ body {
         flex-direction: row;
         flex-wrap: wrap;
         column-gap: 4%;
+        padding: 30px;
         .title{
             width: 100%;
         }
@@ -179,7 +180,7 @@ body {
 
             &::before {
                 left: auto;
-                right: -45px;
+                right: -65px;
             }
         }
     }
@@ -209,14 +210,14 @@ body {
 .info {
     display: flex;
     flex-direction: column;
-    background: #333;
+    background: $secondary-color;
     color: gray;
     border-radius: 10px;
     padding: 10px;
     font-size: 16px;
 }
 .title {
-    color: $secondary-color;
+    color: $primary-color;
     position: relative;
     font-size: 38px;
     &::before {
@@ -228,9 +229,9 @@ body {
         top: 8px;
         border-radius: 999px;
         border: 3px solid $secondary-color;
-        left: -45px;
+        left: -65px;
     }
     .card:nth-child(odd) &::before {    
-        right: -45px;
+        right: -65px;
     }
 }

@@ -1,9 +1,7 @@
 jQuery("document").ready(function(){
   AOS.init();
-
   const sections = document.querySelectorAll('h2, section');
   const navLinks = document.querySelectorAll('.nav-link');
-
   window.addEventListener('scroll', () => {
     let current = '';
     sections.forEach(section => {
@@ -19,7 +17,6 @@ jQuery("document").ready(function(){
       }
     });
   });
-
   var swiper = new Swiper('.swiper-tecnologias', {
     slidesPerView: 12,
     spaceBetween: 12,
@@ -35,7 +32,6 @@ jQuery("document").ready(function(){
       delay: 1000,
     },
   });
-
   var swiper = new Swiper('.swiper', {
     slidesPerView: 1,
     spaceBetween: 0,
@@ -45,17 +41,11 @@ jQuery("document").ready(function(){
       delay: 1000,
     },
   });
-  //Efeito background
-
   document.addEventListener('mousemove', function(){
     var x = event.clientX;
     var y = event.clientY;
     jQuery(".pointer-background").css("background", "radial-gradient(600px at " + x +"px "+ y +"px, rgba(255, 255, 255, 0.05), transparent 80%)");
   });
-  
-
-  //Menu
-
   jQuery(".menu-icon").on("click", function(){
     jQuery(".lateral").addClass("active");
     jQuery(".initial-page").addClass("recuo");
