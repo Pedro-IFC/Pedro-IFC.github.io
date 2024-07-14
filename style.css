@@ -1149,7 +1149,7 @@ body {
   content: "";
   width: 0;
   height: 2px;
-  background-color: rgb(204, 0, 0);
+  background-color: orangered;
   transition: all 0.3s;
   position: absolute;
   left: 0;
@@ -1157,7 +1157,7 @@ body {
   bottom: 0;
 }
 .lateral ul li a:hover, .lateral ul li a.active {
-  color: rgb(204, 0, 0);
+  color: orangered;
 }
 .lateral ul li a:hover::after, .lateral ul li a.active::after {
   width: 100%;
@@ -1661,4 +1661,55 @@ body {
   height: 100%;
   -o-object-fit: contain;
      object-fit: contain;
+}
+
+.certificados .container {
+  width: 1000px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+}
+.certificados .container .item {
+  width: calc(50% - 16px);
+  border: 2px solid #333;
+  border-radius: 12px;
+  padding: 12px;
+  transition: all 0.3s;
+  font-family: "Poppins";
+  color: #FFF;
+}
+.certificados .container .item:hover {
+  border-color: orangered;
+}
+.certificados .container .item a {
+  text-decoration: none;
+  color: #fff;
+  font-family: "Poppins";
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 22px;
+  transition: all 0.3s;
+  width: 100%;
+  padding: 0;
+  position: relative;
+}
+.certificados .container .item a::after {
+  content: "";
+  width: 0;
+  height: 2px;
+  background-color: orangered;
+  transition: all 0.3s;
+  position: absolute;
+  left: 0;
+  top: auto;
+  bottom: -2px;
+}
+.certificados .container .item a:hover, .certificados .container .item a.active {
+  color: orangered;
+}
+.certificados .container .item a:hover::after, .certificados .container .item a.active::after {
+  width: 100%;
+}
+.certificados .container .item div.description {
+  padding-top: 12px;
 }

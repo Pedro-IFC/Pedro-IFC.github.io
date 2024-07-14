@@ -29,7 +29,7 @@
                     content: "";
                     width: 0;
                     height: 2px;
-                    background-color: rgb(204, 0, 0);
+                    background-color: $primary-color;
                     transition: all .3s;
                     position: absolute;
                     left: 0;
@@ -37,7 +37,7 @@
                     bottom: 0;
                 }
                 &:hover, &.active{
-                    color: rgb(204, 0, 0);
+                    color: $primary-color;
                     &::after{
                         width: 100%;
                     }

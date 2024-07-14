@@ -375,3 +375,55 @@ body {
         }
     }
 }
+.certificados{
+    .container{
+        width: 1000px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 32px;
+        .item{
+            width: calc(50% - 16px);
+            border: 2px solid $secondary-color;
+            border-radius: 12px;
+            padding: 12px;
+            transition: all .3s;
+            font-family: "Poppins";
+            color: #FFF;
+            &:hover{
+                border-color: $primary-color;
+            }
+            a{
+                text-decoration: none;
+                color: $white;
+                font-family: "Poppins";
+                font-size: 20px;
+                font-weight: 500;
+                line-height: 22px; 
+                transition: all .3s;
+                width: 100%;
+                padding: 0;
+                position: relative;
+                &::after{
+                    content: "";
+                    width: 0;
+                    height: 2px;
+                    background-color: $primary-color;
+                    transition: all .3s;
+                    position: absolute;
+                    left: 0;
+                    top: auto;
+                    bottom: -2px;
+                }
+                &:hover, &.active{
+                    color: $primary-color;
+                    &::after{
+                        width: 100%;
+                    }
+                }
+            }
+            div.description{
+                padding-top: 12px;
+            }
+        }
+    }
+}
