@@ -65,7 +65,14 @@ jQuery("document").ready(function () {
   var swiperProjetos = new Swiper('.swiper-projetos', {
     slidesPerView: 1,
     spaceBetween: 20,
-    speed: 1000
+    speed: 1000,
+    pagination: {
+      el: '.swiper-pagination'
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev'
+    }
   });
   document.addEventListener('mousemove', function () {
     var x = event.clientX;

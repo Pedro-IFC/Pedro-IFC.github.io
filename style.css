@@ -1189,6 +1189,9 @@ body {
 
 /* Footer
 ========================================================================== */
+.main-footer {
+  padding-top: 80px;
+}
 .main-footer .container {
   background-color: #333;
   border-radius: 30px 30px 0px 0px;
@@ -1518,17 +1521,44 @@ body {
   right: -65px;
 }
 
+.projetos {
+  padding: 80px 0px;
+}
 .projetos .container {
   width: 1000px;
+  position: relative;
 }
 .projetos .swiper-projetos {
   overflow: visible;
+}
+.projetos .swiper-projetos .swiper-button-next,
+.projetos .swiper-projetos .swiper-button-prev {
+  color: orangered;
+}
+.projetos .swiper-projetos .swiper-button-prev {
+  transform: translateX(-48px);
+}
+.projetos .swiper-projetos .swiper-button-next {
+  transform: translateX(48px);
+}
+.projetos .swiper-projetos .swiper-pagination {
+  top: 50px;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.projetos .swiper-projetos .swiper-pagination .swiper-pagination-bullet {
+  width: 20px;
+  height: 20px;
+}
+.projetos .swiper-projetos .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background-color: orangered;
 }
 .projetos .swiper-projetos .swiper-slide {
   transition: all 0.3s;
 }
 .projetos .swiper-projetos .swiper-slide.swiper-slide-active .project {
   margin: 0px;
+  margin-top: 100px;
 }
 .projetos .swiper-projetos .swiper-slide .project {
   transition: all 0.3s;
@@ -1539,7 +1569,7 @@ body {
   color: #fff;
 }
 .projetos .swiper-projetos .swiper-slide .project .img-container {
-  max-height: 500px;
+  max-height: 400px;
   overflow-x: hidden;
   overflow-y: scroll;
 }
@@ -1582,6 +1612,7 @@ body {
   padding: 8px 32px;
   border-radius: 12px;
   font-family: "Inconsolata";
+  font-weight: 600;
   font-size: 24px;
   text-transform: uppercase;
   text-decoration: none;

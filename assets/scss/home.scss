@@ -236,16 +236,40 @@ body {
     }
 }
 .projetos{
+    padding: 80px 0px;
     .container{
         width: 1000px;
+        position: relative;
     }
     .swiper-projetos{
         overflow: visible;
+        .swiper-button-next,
+        .swiper-button-prev{
+            color: $primary-color;
+        }
+        .swiper-button-prev{
+            transform: translateX(-48px);
+        }
+        .swiper-button-next{
+            transform: translateX(48px);
+        }
+        .swiper-pagination{
+            top: 50px;
+            height: fit-content;
+            .swiper-pagination-bullet{
+                width: 20px;
+                height: 20px;
+                &.swiper-pagination-bullet-active{
+                    background-color: $primary-color;
+                }
+            }
+        }
         .swiper-slide{
             transition: all .3s;
             &.swiper-slide-active{
                 .project{
                     margin: 0px;
+                    margin-top: 100px;
                 }
             }
             .project{
@@ -256,7 +280,7 @@ body {
                 background-color: $secondary-color;
                 color: $white;
                 .img-container{
-                    max-height: 500px;
+                    max-height: 400px;
                     overflow-x: hidden;
                     overflow-y: scroll;
                     &::-webkit-scrollbar {
@@ -297,6 +321,7 @@ body {
                         padding: 8px 32px;
                         border-radius: 12px;
                         font-family: "Inconsolata";
+                        font-weight: 600;
                         font-size: 24px;
                         text-transform: uppercase;
                         text-decoration: none;
