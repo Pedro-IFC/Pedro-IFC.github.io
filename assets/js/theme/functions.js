@@ -17,7 +17,7 @@ jQuery("document").ready(function(){
       }
     });
   });
-  var swiper = new Swiper('.swiper-tecnologias', {
+  const swiperTec = new Swiper('.swiper-tecnologias', {
     slidesPerView: 12,
     spaceBetween: 12,
     loop: true,
@@ -30,16 +30,23 @@ jQuery("document").ready(function(){
     speed: 500,
     autoplay: {
       delay: 1000,
+      pauseOnMouseEnter: true,
     },
   });
-  var swiper = new Swiper('.swiper', {
+  const swiper = new Swiper('.swiper', {
     slidesPerView: 1,
     spaceBetween: 0,
     loop: true,
     speed: 2000,
     autoplay: {
       delay: 1000,
+      pauseOnMouseEnter: true,
     },
+  });
+  const swiperProjetos = new Swiper('.swiper-projetos', {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    speed: 1000,
   });
   document.addEventListener('mousemove', function(){
     var x = event.clientX;

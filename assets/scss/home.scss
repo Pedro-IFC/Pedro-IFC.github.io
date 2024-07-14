@@ -235,3 +235,118 @@ body {
         right: -65px;
     }
 }
+.projetos{
+    .container{
+        width: 1000px;
+    }
+    .swiper-projetos{
+        overflow: visible;
+        .swiper-slide{
+            transition: all .3s;
+            &.swiper-slide-active{
+                .project{
+                    margin: 0px;
+                }
+            }
+            .project{
+                transition: all .3s;
+                margin: 50px;
+                padding: 30px;
+                border-radius: 18px;
+                background-color: $secondary-color;
+                color: $white;
+                .img-container{
+                    max-height: 500px;
+                    overflow-x: hidden;
+                    overflow-y: scroll;
+                    &::-webkit-scrollbar {
+                        transition: all .3s;
+                        width: 12px; /* Largura da barra de rolagem */
+                        height: 12px; /* Altura da barra de rolagem (para rolagem horizontal) */
+                    }
+                    &::-webkit-scrollbar-track {
+                        background: #888!important; 
+                        border-radius: 10px!important;
+                    }
+                    &::-webkit-scrollbar-thumb {
+                        background: $primary-color!important; 
+                        border-radius: 10px!important;
+                    }
+                    &::-webkit-scrollbar-thumb:active {
+                        background: $primary-color!important; 
+                    }
+                    &::-webkit-scrollbar-thumb:hover {
+                        background: $primary-color!important; 
+                    }
+                    &::-webkit-scrollbar-corner {
+                        background: #888!important; 
+                    }
+                    img{
+                        transition: all .3s;
+                        width: 100%;
+                    }
+                }
+                .description{
+                    padding-top: 20px;
+                    display: flex;
+                    gap: 32px;
+                    justify-content: space-between;
+                    align-items: flex-start;
+                    padding: 20px 0px;
+                    a{
+                        padding: 8px 32px;
+                        border-radius: 12px;
+                        font-family: "Inconsolata";
+                        font-size: 24px;
+                        text-transform: uppercase;
+                        text-decoration: none;
+                        border: 1px solid $primary-color;
+                        background-color: $primary-color;
+                        color: $black;
+                        transition: all .3s;
+                        &:hover{
+                            color: $primary-color;
+                            background-color: $secondary-color;
+                        }
+                    }
+                    .left{
+                        font-family: "Poppins";
+                        color: #FFF;
+                        max-width: calc(100% - 232px);
+                        h2{
+                            font-family: "Inconsolata";
+                            font-size: 48px;
+                            line-height: 48px;
+                            text-transform: uppercase;
+                            font-weight: 700;
+                            color: $primary-color;
+                        }
+                        b{
+                            color: $danger;
+                        }
+                    }
+                    .tecnologias{
+                        display: flex;
+                        flex-wrap: wrap;
+                        gap: 16px;
+                        div.img{
+                            display: block;
+                            width: 48px;
+                            height: 48px;
+                            background-color: rgb(36, 41, 56);
+                            border-radius: 12px;
+                            &.pad{
+                                padding: 8px;
+                            }
+                            img{
+                                width: 100%;
+                                height: 100%;
+                                object-fit: contain;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
