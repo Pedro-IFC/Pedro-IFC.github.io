@@ -70,7 +70,7 @@ body {
             h2{
                 padding-bottom: 12px;
             }
-            .swiper{
+            .swiper-tecnologias{
                 a{
                     display: block;
                     width: 48px;
@@ -117,12 +117,9 @@ body {
 .nontext{
     text-transform: none!important;
 }
-.bloco-linha-do-tempo{
-    overflow: hidden;
-    overflow-y: scroll;
-    height: 50vh;
-    width: 50%;
-    direction: rtl;
+.linha-do-tempo{
+    margin: 0px auto;
+    max-width: 800px;
 }
 .timeline {
     margin: 20px auto;
@@ -130,24 +127,39 @@ body {
 }
 .card-time{
     position: relative;
-    max-width: 400px;
-
+    .info{
+        display: flex;
+        justify-content: left;
+        align-items: flex-start;
+        flex-direction: row;
+        flex-wrap: wrap;
+        column-gap: 4%;
+        .title{
+            width: 100%;
+        }
+        .text, .slide{
+            width: calc(48%);      
+        }
+        img{
+            width: 100%;
+            aspect-ratio: 1;
+        }
+    }
     &:nth-child(odd) {
         padding: 30px 0 30px 30px;
-
         &::before {
             left: 0px;
-            top: -4.5px;
-            bottom: -4.5px;
+            top: -5px;
+            bottom: -5px;
             border-width: 5px 0 5px 5px;
             border-radius: 50px 0 0 50px;
         }
 
         @media only screen and (max-width: 400px) {
-        &::before {
-            top: -5px;
-            bottom: -5px;
-        }
+            &::before {
+                top: -5px;
+                bottom: -5px;
+            }
         }
     }
 
@@ -183,7 +195,6 @@ body {
         border-top: 0;
         border-top-left-radius: 0;
     }
-
     &:last-child {
         &:nth-child(odd)::before {
             border-bottom: 0;
@@ -207,7 +218,7 @@ body {
 .title {
     color: $secondary-color;
     position: relative;
-    font-size: 32px;
+    font-size: 38px;
     &::before {
         content: "";
         position: absolute;

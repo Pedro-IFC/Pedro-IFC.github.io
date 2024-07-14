@@ -1360,17 +1360,17 @@ body {
 .top .container .center h2 {
   padding-bottom: 12px;
 }
-.top .container .center .swiper a {
+.top .container .center .swiper-tecnologias a {
   display: block;
   width: 48px;
   height: 48px;
   background-color: rgb(36, 41, 56);
   border-radius: 12px;
 }
-.top .container .center .swiper a.pad {
+.top .container .center .swiper-tecnologias a.pad {
   padding: 8px;
 }
-.top .container .center .swiper a img {
+.top .container .center .swiper-tecnologias a img {
   width: 100%;
   height: 100%;
   -o-object-fit: contain;
@@ -1404,12 +1404,9 @@ body {
   text-transform: none !important;
 }
 
-.bloco-linha-do-tempo {
-  overflow: hidden;
-  overflow-y: scroll;
-  height: 50vh;
-  width: 50%;
-  direction: rtl;
+.linha-do-tempo {
+  margin: 0px auto;
+  max-width: 800px;
 }
 
 .timeline {
@@ -1419,15 +1416,33 @@ body {
 
 .card-time {
   position: relative;
-  max-width: 400px;
+}
+.card-time .info {
+  display: flex;
+  justify-content: left;
+  align-items: flex-start;
+  flex-direction: row;
+  flex-wrap: wrap;
+  -moz-column-gap: 4%;
+       column-gap: 4%;
+}
+.card-time .info .title {
+  width: 100%;
+}
+.card-time .info .text, .card-time .info .slide {
+  width: 48%;
+}
+.card-time .info img {
+  width: 100%;
+  aspect-ratio: 1;
 }
 .card-time:nth-child(odd) {
   padding: 30px 0 30px 30px;
 }
 .card-time:nth-child(odd)::before {
   left: 0px;
-  top: -4.5px;
-  bottom: -4.5px;
+  top: -5px;
+  bottom: -5px;
   border-width: 5px 0 5px 5px;
   border-radius: 50px 0 0 50px;
 }
@@ -1486,7 +1501,7 @@ body {
 .title {
   color: orangered;
   position: relative;
-  font-size: 32px;
+  font-size: 38px;
 }
 .title::before {
   content: "";

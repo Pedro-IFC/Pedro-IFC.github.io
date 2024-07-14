@@ -20,7 +20,7 @@ jQuery("document").ready(function(){
     });
   });
 
-  var swiper = new Swiper('.swiper', {
+  var swiper = new Swiper('.swiper-tecnologias', {
     slidesPerView: 12,
     spaceBetween: 12,
     loop: true,
@@ -36,6 +36,15 @@ jQuery("document").ready(function(){
     },
   });
 
+  var swiper = new Swiper('.swiper', {
+    slidesPerView: 1,
+    spaceBetween: 0,
+    loop: true,
+    speed: 2000,
+    autoplay: {
+      delay: 1000,
+    },
+  });
   //Efeito background
 
   document.addEventListener('mousemove', function(){
