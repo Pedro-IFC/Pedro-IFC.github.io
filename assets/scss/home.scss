@@ -7,6 +7,10 @@
     &.recuo{
         padding-left: 350px;
         width: calc(99vw);
+        @media screen and (max-width: 1100px) {
+            padding-left: 0;
+            width: 100vw;
+        }
     }
 }
 html{
@@ -24,7 +28,7 @@ body {
     color: #b0b0b0;
 }
 .link-light-gray:hover {
-    color: #ffffff;
+    color: $white;
 }
 .text-gray, .content, p{
     color: $grey;
@@ -34,13 +38,19 @@ body {
 }
 .top{
     width: 100%;
-    color: #FFF;
+    color: $white;
     padding: 50px 0px;
     display: flex;
     align-items: center;
     cursor: default;
+    @media screen and (max-width: 768px) {
+        padding-top: 70px;
+    }
     .container{
         min-height: 80vh;
+        @media screen and (max-width: 768px) {
+            min-height: 50vh;
+        }
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -63,7 +73,7 @@ body {
         }
         .name{
             padding-top: 40px;
-            color: #FFF;
+            color: $white;
             font-size: 8vw;
         }
         .center{
@@ -93,7 +103,7 @@ body {
 .sobre-mim{
     padding: 40px 0px;
     font-family: "Poppins";
-    color: #FFF;
+    color: $white;
     .container{
         h2{
             font-family: "Inconsolata";
@@ -141,6 +151,9 @@ body {
         padding: 30px;
         .title{
             width: 100%;
+            @media screen and (max-width: 600px) {
+                font-size: 28px;
+            }  
         }
         .text, .slide{
             width: calc(48%);    
@@ -256,6 +269,9 @@ body {
             width: 100%;
             max-width: 100%!important;
         }
+        @media screen and (max-width: 500px) {
+            padding: 0px 20px;
+        }
         h2{
             width: 100%;
             font-family: "Inconsolata";
@@ -273,27 +289,22 @@ body {
         }
         .swiper-button-prev{
             transform: translateX(-48px);
+            @media screen and (max-width: 1100px) {
+                transform: none;
+            }  
         }
         .swiper-button-next{
             transform: translateX(48px);
-        }
-        .swiper-pagination{
-            top: 50px;
-            height: fit-content;
-            .swiper-pagination-bullet{
-                width: 20px;
-                height: 20px;
-                &.swiper-pagination-bullet-active{
-                    background-color: $primary-color;
-                }
-            }
+            @media screen and (max-width: 1100px) {
+                transform: none;
+            }  
         }
         .swiper-slide{
             transition: all .3s;
             &.swiper-slide-active{
                 .project{
                     margin: 0px;
-                    margin-top: 100px;
+                    margin-bottom: 100px;
                 }
             }
             .project{
@@ -307,6 +318,9 @@ body {
                 @media screen and (max-width: 768px) {
                     min-height: 800px;
                 }
+                @media screen and (max-width: 600px) {
+                    min-height: 900px;
+                }
                 border-radius: 18px;
                 background-color: $secondary-color;
                 color: $white;
@@ -314,6 +328,9 @@ body {
                     max-height: 400px;
                     overflow-x: hidden;
                     overflow-y: scroll;
+                    @media screen and (max-width: 600px) {
+                        overflow-x: scroll;
+                    }
                     &::-webkit-scrollbar {
                         transition: all .3s;
                         width: 12px; /* Largura da barra de rolagem */
@@ -339,6 +356,10 @@ body {
                     img{
                         transition: all .3s;
                         width: 100%;
+                        @media screen and (max-width: 600px) {
+                            min-width: 700px;
+                            object-position: top center;
+                        }
                     }
                 }
                 .description{
@@ -370,7 +391,7 @@ body {
                     }
                     .left{
                         font-family: "Poppins";
-                        color: #FFF;
+                        color: $white;
                         max-width: calc(100% - 232px);
                         @media screen and (max-width: 1100px) {
                             max-width: 100%;
@@ -416,6 +437,7 @@ body {
     padding: 80px 0px;
     .container{
         width: 1000px;
+        max-width: 100%;
         display: flex;
         flex-wrap: wrap;
         gap: 32px;
@@ -432,12 +454,13 @@ body {
             @media screen and (max-width: 768px) {
                 width: 100%
             }
+            background-color: $black;
             border: 2px solid $secondary-color;
             border-radius: 12px;
             padding: 12px;
             transition: all .3s;
             font-family: "Poppins";
-            color: #FFF;
+            color: $white;
             &:hover{
                 border-color: $primary-color;
             }
