@@ -110,6 +110,9 @@ body {
             flex-wrap: wrap;
             gap: 30px;
             .left, .right{
+                @media screen and (max-width: 768px) {
+                    width: 100%;
+                }
                 width: calc(50% - 30px);
             }
         }
@@ -140,7 +143,10 @@ body {
             width: 100%;
         }
         .text, .slide{
-            width: calc(48%);      
+            width: calc(48%);    
+            @media screen and (max-width: 768px) {
+                width: 100%;
+            }  
         }
         img{
             width: 100%;
@@ -216,6 +222,10 @@ body {
     border-radius: 10px;
     padding: 10px;
     font-size: 16px;
+    @media screen and (max-width: 768px) {
+        flex-wrap: wrap;
+        gap: 16px;
+    }
 }
 .title {
     color: $primary-color;
@@ -241,6 +251,11 @@ body {
     .container{
         width: 1100px;
         position: relative;
+        @media screen and (max-width: 1100px) {
+            padding: 0px 70px;
+            width: 100%;
+            max-width: 100%!important;
+        }
         h2{
             width: 100%;
             font-family: "Inconsolata";
@@ -285,6 +300,13 @@ body {
                 transition: all .3s;
                 margin: 50px;
                 padding: 30px;
+                @media screen and (max-width: 1100px) {
+                    margin: 0px;
+                    margin-top: 100px;
+                }
+                @media screen and (max-width: 768px) {
+                    min-height: 800px;
+                }
                 border-radius: 18px;
                 background-color: $secondary-color;
                 color: $white;
@@ -326,6 +348,9 @@ body {
                     justify-content: space-between;
                     align-items: flex-start;
                     padding: 20px 0px;
+                    @media screen and (max-width: 1100px) {
+                        flex-wrap: wrap;
+                    }
                     a{
                         padding: 8px 32px;
                         border-radius: 12px;
@@ -347,6 +372,9 @@ body {
                         font-family: "Poppins";
                         color: #FFF;
                         max-width: calc(100% - 232px);
+                        @media screen and (max-width: 1100px) {
+                            max-width: 100%;
+                        }
                         h2{
                             font-family: "Inconsolata";
                             font-size: 48px;
@@ -401,6 +429,9 @@ body {
         }
         .item{
             width: calc(50% - 16px);
+            @media screen and (max-width: 768px) {
+                width: 100%
+            }
             border: 2px solid $secondary-color;
             border-radius: 12px;
             padding: 12px;
