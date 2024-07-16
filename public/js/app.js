@@ -108,9 +108,38 @@ jQuery("document").ready(function () {
       jQuery(".lateral").removeClass("active");
       jQuery(".initial-page").removeClass("recuo");
     }
+    if (!jQuery(event.target).closest('#color-modal').length && !jQuery(event.target).closest('#open-color-modal').length) {
+      jQuery("#color-modal").removeClass("active");
+    }
+  });
+  jQuery(".reset-color-item").on('click', function (event) {
+    if (jQuery(this).attr("color") == "black") {
+      jQuery(this).attr("color", "white");
+      localStorage.setItem('pColor', "#005543");
+      localStorage.setItem('sColor', "#c3c3c3");
+      localStorage.setItem('black', "#FFFFFF");
+      localStorage.setItem('grey', "#000000");
+      localStorage.setItem('white', "#141414");
+      loadColors();
+    } else {
+      jQuery(this).attr("color", "black");
+      localStorage.setItem('pColor', "#FF4500");
+      localStorage.setItem('sColor', "#333333");
+      localStorage.setItem('black', "#141414");
+      localStorage.setItem('grey', "#E0E0E0");
+      localStorage.setItem('white', "#FFFFFF");
+      loadColors();
+    }
+  });
+  jQuery("#open-color-modal").on('click', function (event) {
+    jQuery("#color-modal").addClass("active");
+  });
+  jQuery(".close-modal").on('click', function (event) {
+    jQuery("#color-modal").removeClass("active");
   });
   jQuery(".change-color-item").on("click", function () {
     if (jQuery(this).attr("color") == "black") {
+      jQuery(this).attr("color", "white");
       localStorage.setItem('pColor', "#005543");
       localStorage.setItem('sColor', "#c3c3c3");
       localStorage.setItem('black', "#FFFFFF");
