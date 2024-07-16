@@ -157,11 +157,17 @@ body {
             @media screen and (max-width: 600px) {
                 font-size: 28px;
             }  
+            @media screen and (max-width: 400px) {
+                font-size: 24px;
+            }  
         }
         .text, .slide{
             width: calc(48%);    
             @media screen and (max-width: 768px) {
                 width: 100%;
+            }  
+            @media screen and (max-width: 400px) {
+                font-size: 18px;
             }  
         }
         img{

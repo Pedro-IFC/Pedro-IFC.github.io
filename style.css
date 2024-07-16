@@ -1512,12 +1512,22 @@ body {
     font-size: 28px;
   }
 }
+@media screen and (max-width: 400px) {
+  .card-time .info .title {
+    font-size: 24px;
+  }
+}
 .card-time .info .text, .card-time .info .slide {
   width: 48%;
 }
 @media screen and (max-width: 768px) {
   .card-time .info .text, .card-time .info .slide {
     width: 100%;
+  }
+}
+@media screen and (max-width: 400px) {
+  .card-time .info .text, .card-time .info .slide {
+    font-size: 18px;
   }
 }
 .card-time .info img {
