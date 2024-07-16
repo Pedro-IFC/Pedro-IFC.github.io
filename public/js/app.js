@@ -90,15 +90,6 @@ jQuery("document").ready(function () {
       prevEl: '.swiper-button-prev'
     }
   });
-  document.addEventListener('mousemove', function () {
-    var x = event.clientX;
-    var y = event.clientY;
-    var rootStyles = getComputedStyle(document.body);
-    var whiteColor = rootStyles.getPropertyValue('--white').trim();
-    var op = whiteColor == "#FFF" ? 0.05 : 0.2;
-    var whiteWithOpacity = hexToRgba(whiteColor, op);
-    jQuery(".pointer-background").css("background", "radial-gradient(600px at " + x + "px " + y + "px, " + whiteWithOpacity + ", transparent 80%)");
-  });
   jQuery(".menu-icon").on("click", function () {
     jQuery(".lateral").addClass("active");
     jQuery(".initial-page").addClass("recuo");
