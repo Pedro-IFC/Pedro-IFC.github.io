@@ -18,6 +18,7 @@
 /***/ (() => {
 
 jQuery("document").ready(function () {
+  loadColors();
   AOS.init();
   var sections = document.querySelectorAll('section');
   var navLinks = document.querySelectorAll('.nav-link');
@@ -110,24 +111,34 @@ jQuery("document").ready(function () {
   });
   jQuery(".change-color-item").on("click", function () {
     if (jQuery(this).attr("color") == "black") {
-      jQuery(this).attr("color", "white");
-      jQuery("body").css({
-        "--p-color": "#005543",
-        "--s-color": "#c3c3c3",
-        "--black": "#fff",
-        "--grey": "#000000",
-        "--white": "#141414"
-      });
+      localStorage.setItem('pColor', "#005543");
+      localStorage.setItem('sColor', "#c3c3c3");
+      localStorage.setItem('black', "#FFFFFF");
+      localStorage.setItem('grey', "#000000");
+      localStorage.setItem('white', "#141414");
+      loadColors();
     } else {
       jQuery(this).attr("color", "black");
-      jQuery("body").css({
-        "--p-color": "orangered",
-        "--s-color": "#333",
-        "--black": "#141414",
-        "--grey": "#e0e0e0",
-        "--white": "white"
-      });
+      localStorage.setItem('pColor', "#FF4500");
+      localStorage.setItem('sColor', "#333333");
+      localStorage.setItem('black', "#141414");
+      localStorage.setItem('grey', "#E0E0E0");
+      localStorage.setItem('white', "#FFFFFF");
+      loadColors();
     }
+  });
+  jQuery(".input-colors input").on("change", function () {
+    var pColor = jQuery('.input-colors input[name=primaria]').val();
+    var sColor = jQuery('.input-colors input[name=secundaria]').val();
+    var black = jQuery('.input-colors input[name=preto]').val();
+    var grey = jQuery('.input-colors input[name=cinza]').val();
+    var white = jQuery('.input-colors input[name=branco]').val();
+    localStorage.setItem('pColor', pColor);
+    localStorage.setItem('sColor', sColor);
+    localStorage.setItem('black', black);
+    localStorage.setItem('grey', grey);
+    localStorage.setItem('white', white);
+    loadColors();
   });
 });
 function hexToRgba(hex, alpha) {
@@ -144,6 +155,40 @@ function hexToRgba(hex, alpha) {
   var g = bigint >> 8 & 255;
   var b = bigint & 255;
   return "rgba(".concat(r, ", ").concat(g, ", ").concat(b, ", ").concat(alpha, ")");
+}
+function loadColors() {
+  var pColor = localStorage.getItem('pColor');
+  var sColor = localStorage.getItem('sColor');
+  var black = localStorage.getItem('black');
+  var grey = localStorage.getItem('grey');
+  var white = localStorage.getItem('white');
+  if (pColor) {
+    jQuery("body").css({
+      "--p-color": pColor,
+      "--s-color": sColor,
+      "--black": black,
+      "--grey": grey,
+      "--white": white
+    });
+    jQuery('.input-colors input[name=primaria]').val(pColor);
+    jQuery('.input-colors input[name=secundaria]').val(sColor);
+    jQuery('.input-colors input[name=preto]').val(black);
+    jQuery('.input-colors input[name=cinza]').val(grey);
+    jQuery('.input-colors input[name=branco]').val(white);
+    if (white == "#FFFFFF") {
+      jQuery(".change-color-item").attr("color", "black");
+    } else {
+      jQuery(".change-color-item").attr("color", "white");
+    }
+  } else {
+    jQuery(this).attr("color", "black");
+    localStorage.setItem('pColor', "#FF4500");
+    localStorage.setItem('sColor', "#333333");
+    localStorage.setItem('black', "#141414");
+    localStorage.setItem('grey', "#E0E0E0");
+    localStorage.setItem('white', "#FFFFFF");
+    loadColors();
+  }
 }
 
 /***/ }),
