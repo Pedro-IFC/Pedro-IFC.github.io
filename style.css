@@ -1472,6 +1472,9 @@ body {
     width: 100%;
   }
 }
+.sobre-mim .container .left-right .right {
+  max-width: 400px;
+}
 
 .nontext {
   text-transform: none !important;
