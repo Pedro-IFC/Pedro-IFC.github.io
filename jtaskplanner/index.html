@@ -24,6 +24,36 @@
                 <li>
                     <a href="#">JTaskPlanner</a>
                 </li>
+                <li>
+                    <a href="#examples">Exemplos</a>
+                </li>
+                <li>
+                    <a href="#getting-started">Introdução</a>
+                </li>
+                <li>
+                    <a href="#add-to-project">Adicionar ao projeto</a>
+                </li>
+                <li>
+                    <a href="#tarefa">Tarefa</a>
+                </li>
+                <li>
+                    <a href="#task">Task</a>
+                </li>
+                <li>
+                    <a href="#timer">Timer</a>
+                </li>
+                <li>
+                    <a href="#trigger">Trigger</a>
+                </li>
+                <li>
+                    <a href="#planner">Planner</a>
+                </li>
+                <li>
+                    <a href="#cron">Cron</a>
+                </li>
+                <li>
+                    <a href="#keeprunning">keepRunning</a>
+                </li>
             </ul>
         </div>
     </div>
@@ -34,32 +64,192 @@
                     <div data-aos="zoom-in">
                         <h1 class="text-dark-gray">JTaskPlanner</h1>
                         <hr class="text-gray">
-                        <p>Este projeto é um framework Java projetado para facilitar a manutenção de bancos de dados e tabelas. Ele fornece uma interface intuitiva e fácil de usar para criar, alterar e excluir bancos de dados e suas respectivas tabelas. Usando este framework, os desenvolvedores podem definir programaticamente a estrutura dos bancos de dados, garantindo maior controle e flexibilidade no gerenciamento de esquemas de dados.</p>
+                        <p>O projeto JTaskPlanner é uma biblioteca Java destinada ao agendamento e execução de tarefas baseadas em gatilhos temporais. Ele permite a configuração de tarefas periódicas utilizando expressões cron e outros métodos de temporização. Este guia fornecerá instruções detalhadas sobre como utilizar as classes principais do projeto para planejar e executar tarefas.</p>
                         <hr class="text-gray">
                     </div>
                     <div data-aos="zoom-in" id="examples">
                         <h2 class="text-dark-gray">Exemplos</h2>
                         <div class="content" data-aos="zoom-in">
-                            Abaixo está um exemplo de código que demonstra como usar o framework para criar e gerenciar bancos de dados e tabelas.
-        <pre><code class="language-js">public class Main {
-            public static void main(String[] args) throws SQLException {
-                MySQLQueryBuilder mysqlC = new MySQLQueryBuilder("localhost", "3306", "root", "");
-                DataBaseFactory sqlS = mysqlC.initQuery();
-
-                IDatabase db = sqlS.createDatabase("alunos", "latin1_swedish_ci", "latin1");
-            </code></pre>
+                            Abaixo está um exemplo de código que demonstra como usar o framework para criar e gerenciar tarefas com triggers
+        <pre><code class="language-js">public static void main(String[] args) throws InterruptedException {
+    Trigger trigger = TriggerBuilder.newTrigger()
+            .rename("Nova tarefa")
+            .when(
+                TimerBuilder.newTimer()
+                .interval(1000)
+                .repeat(10)
+            );
+    
+    Task task = TaskBuilder.newTask()
+        .rename("Tarefa 10 vezes a cada 1000 ms")
+        .setTask(new TarefaTeste());
+    
+    PlanBuilder.newPlanner()
+        .setOutput("./")
+        .planTask(trigger, task)
+        .start();
+    
+    
+    PlanBuilder.keepRunning();
+}</code></pre>
+        Abaixo está um exemplo de código que demonstra como usar o framework para criar e gerenciar tarefas com crons
+        <pre><code class="language-js">public static void main(String[] args) throws InterruptedException {
+    Task task = TaskBuilder.newTask()
+        .rename("Tarefa de teste 18h mes 8")
+        .setTask(new TarefaTeste());
+    
+    PlanBuilder.newPlanner()
+        .setOutput("./")
+        .cron("* 9 * * *", task)
+        .start();
+    
+    PlanBuilder.keepRunning();
+}</code></pre>
+                     </div>
+                    </div>
+                    <div data-aos="zoom-in" id="getting-started">
+                        <hr class="text-gray">
+                        <h2 class="text-dark-gray">Introdução</h2><br>
+                        <h3 class="text-dark-gray" id="installation">Instalação</h3><br>
+                        <div class="content">
+                            <li>
+                                <a target="_blank" href="https://github.com/Pedro-IFC/JTaskPlanner" class="btn btn-light">Baixar do GitHub</a>
+                            </li>
                         </div>
                     </div>
-                    <div data-aos="zoom-in" id="creating-associative-tables">
+                    <div data-aos="zoom-in" id="add-to-project">
                         <hr class="text-gray">
-                        <h2 class="text-dark-gray">Criação de Tabelas Associativas</h2><br>
+                        <h3 class="text-dark-gray">Adicionar ao seu projeto</h3><br>
                         <div class="content">
-                            <pre><code class="language-js">ITable table = db.createTable(name);
-    table.createForeignKey(otherTable.createPrimaryKey(col), table.createAttr(col).integer(8));
-    table.createForeignKey(anotherTable.createPrimaryKey(col2), table.createAttr(col).integer(8));</code></pre>
+                            <ul class="list-unstyled">
+                                <li>
+                                    Importe para o seu projeto Java;
+                                </li>
+                                <br>
+                                <li>
+                                    Referencie as classes para usar.
+                                </li>
+                            </ul>
+    <pre><code class="language-js">import planner.PlanBuilder;
+import trigger.Trigger;
+import trigger.TriggerBuilder;
+import task.Task;
+import task.TaskBuilder;
+import timer.TimerBuilder;</code></pre>
                         </div>
                     </div>
                     <div data-aos="zoom-in">
+                        <hr class="text-gray">
+                        <h2 class="text-dark-gray">Criando a task</h2><br>
+                        <div class="content">
+                            Cria uma task contendo um nome e uma tarefa a ser executada, essa tarefa vem a partir de uma classe com uma função <i>execute</i>.<br>
+                            <br><h4 id="tarefa">Criar Tarefa</h4>
+                            <pre><code class="language-js">import task.TaskDetail;
+public class TarefaTeste implements TaskDetail{
+    @Override
+    public void execute() {
+        System.out.println("Teste script");
+    }
+}</code></pre>
+                            <br><h4 id="task">Criar Task</h4>
+                            <hr>
+                            <pre><code class="language-js">Task task = TaskBuilder.newTask()
+    .rename("Tarefa de teste")
+    .setTask(new TarefaTeste());</code></pre>
+                        </div>
+                    </div>
+                    <div data-aos="zoom-in" id="timer">
+                        <hr class="text-gray">
+                        <h2 class="text-dark-gray">Timer</h2><br>
+                        <div class="content">
+                            Para gerenciar o tempo de execução é possível através da classe Timer ou então através do método <a href="#cron">cron</a>, passado adiante
+                            <pre><code class="language-js">TimerBuilder.newTimer()
+    .interval(1000) //tempo do intervalo em ms
+    .repeat(10) //número de execuções</code></pre>
+                        </div>
+                        <div class="content">
+                            Para criar uma tarefa que executa infinitamente é possível passar o repeat vazio
+                            <pre><code class="language-js">TimerBuilder.newTimer()
+    .interval(2000) //tempo do intervalo em ms
+    .repeat() //caso vazio será para sempre</code></pre>
+                        </div>
+                        <div class="content">
+                            Para começar com a tarefa executanto é necessário passar o método start()
+                            <pre><code class="language-js">TimerBuilder.newTimer()
+    .interval(2000) //tempo do intervalo em ms
+    .repeat() //caso vazio será para sempre
+    .start() //caso não tenha o timer esperara o intervalo definido para iniciar a tarefa</code></pre>
+                        </div>
+                    </div>
+                    <div data-aos="zoom-in" id="trigger">
+                        <hr class="text-gray">
+                        <h2 class="text-dark-gray">Trigger</h2><br>
+                        <div class="content">
+                            É possível criar uma execução baseada em um timer utilizando o trigger, abaixo demonstro como criar um trigger
+                            <pre><code class="language-js">Trigger trigger = TriggerBuilder.newTrigger();</code></pre>
+                            Para nomear o trigger basta chamar a função rename()
+                            <pre><code class="language-js">Trigger trigger = TriggerBuilder.newTrigger()
+    .rename("Nova tarefa");</code></pre>
+                            Para identificar em qual "tempo" a task deve ser executada basta chamar a função when()
+                            <pre><code class="language-js">Trigger trigger = TriggerBuilder.newTrigger()
+    .rename("Nova tarefa")
+    .when(
+        TimerBuilder.newTimer()
+        .interval(1000)
+        .repeat(10)
+    );</code></pre>
+                        </div>
+                    </div>
+                    <div data-aos="zoom-in" id="planner">
+                        <hr class="text-gray">
+                        <h2 class="text-dark-gray">Planner</h2><br>
+                        <div class="content">
+                            Para associar um trigger à uma tarefa é necessário utilizar a classe Planner
+                            <pre><code class="language-js">PlanBuilder.newPlanner();</code></pre>
+                            <br><h4>setOutput()</h4>
+                            <hr>
+                            É possível também associar onde será o output dos logs do sistema a partir da função <i>setOutput()</i>
+                            <pre><code class="language-js">PlanBuilder.newPlanner()
+    .setOutput("./logs/");</code></pre>
+                            <br><h4>planTask()</h4>
+                            <hr>
+                            Para associar uma task à um trigger utilizamos a função <i>planTask()</i>
+                            <pre><code class="language-js">PlanBuilder.newPlanner()
+    .setOutput("./")
+    .planTask(trigger, task)</code></pre>
+                            <br><h4>start()</h4>
+                            <hr>
+                            Para iniciar a tarefa associada ao plano utilizamos a função <i>start()</i>
+                            <pre><code class="language-js">PlanBuilder.newPlanner()
+    .setOutput("./")
+    .planTask(trigger, task)
+    .start();</code></pre>
+                            <br><h4 id="cron">cron()</h4>
+                            <hr>
+                            Para iniciar a task, mas executa-lá numa cron é necessário chamar o método <i>cron()</i>
+                            <pre><code class="language-js">PlanBuilder.newPlanner()
+    .setOutput("./")
+    .cron("* 9 * * *", task)
+    .start();</code></pre>
+                                Este que segue a estrutura padrão abaixo:
+                                <pre><code class="language-js">
+* * * * * comando_a_ser_executado
+- - - - -
+| | | | |
+| | | | | 
+| | | | +----- dia da semana (0 - 7) (Domingo = 0 ou 7)
+| | | +------- mês (1 - 12)
+| | +--------- dia do mês (1 - 31)
+| +----------- hora (0 - 23)
++------------- minuto (0 - 59)
+                                </code></pre>
+                                <br><h4 id="keeprunning">keepRunning()</h4>
+                                <hr>
+                                Para que o código continue rodando através do programa é necessário chamar a função <i>keepRunning()</i> desta forma o programa continua a rodar independente do método principal ter finalizado
+                                
+                                <pre><code class="language-js">PlanBuilder.keepRunning();</code></pre>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
