@@ -961,9 +961,30 @@ body::-webkit-scrollbar-thumb:hover {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
+.pad-30 {
+  padding: 30px 0px;
+}
+
 .mob-icon-menu,
 .mob-menu-icon {
   color: #fff !important;
+}
+
+ul.numerate:not(.not-first) {
+  list-style-position: inside;
+  list-style-type: decimal;
+}
+ul.numerate:not(.not-first) li {
+  list-style-position: inside;
+  list-style-type: decimal;
+}
+ul.numerate.not-first {
+  list-style-position: inside;
+  list-style-type: decimal;
+}
+ul.numerate.not-first li:not(:first-child) {
+  list-style-position: inside;
+  list-style-type: decimal;
 }
 
 [class^=mob-icon-]:before,
@@ -1124,18 +1145,38 @@ body {
   padding: 40px;
   z-index: 31;
   transition: all 0.3s;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 @media screen and (max-width: 600px) {
   .lateral {
     width: 100vw;
   }
 }
+.lateral.larger {
+  width: 400px;
+}
+.lateral.active {
+  left: 0px;
+}
+@media screen and (max-width: 1100px) {
+  .lateral.active {
+    box-shadow: 0 0 0 100vw rgba(0, 0, 0, 0.5647058824);
+  }
+}
+.lateral.right {
+  left: auto;
+  right: -100vw;
+}
+.lateral.right.active {
+  right: 0px;
+}
 .lateral .buttons {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   padding-bottom: 40px;
-  gap: 16px;
+  gap: 14px;
   width: 100%;
 }
 .lateral .buttons > div {
@@ -1165,6 +1206,11 @@ body {
 }
 .lateral ul li {
   width: 100%;
+  color: var(--black);
+  font-family: "Poppins";
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 140%;
 }
 .lateral ul li a {
   cursor: pointer;
@@ -1196,14 +1242,6 @@ body {
 .lateral ul li a:hover::after, .lateral ul li a.active::after {
   width: 100%;
 }
-.lateral.active {
-  left: 0px;
-}
-@media screen and (max-width: 1100px) {
-  .lateral.active {
-    box-shadow: 0 0 0 100vw rgba(0, 0, 0, 0.5647058824);
-  }
-}
 
 .menu-icon {
   width: 50px;
@@ -1224,6 +1262,10 @@ body {
 .menu-icon:hover {
   color: var(--black);
   background-color: var(--white);
+}
+.menu-icon.right {
+  left: auto;
+  right: 30px;
 }
 
 /* Footer
@@ -1340,6 +1382,15 @@ body {
 .initial-page.recuo {
   padding-left: 350px;
   width: 99vw;
+}
+.initial-page.recuo.right {
+  padding-left: 0;
+  padding-right: 350px;
+}
+@media screen and (max-width: 1100px) {
+  .initial-page.recuo.right {
+    padding-right: 0;
+  }
 }
 @media screen and (max-width: 1100px) {
   .initial-page.recuo {

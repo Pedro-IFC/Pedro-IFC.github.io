@@ -411,12 +411,31 @@ body::-webkit-scrollbar-thumb {
 	padding: 10px 10px 0px 10px;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
-
+.pad-30{
+	padding: 30px 0px;
+}
 .mob-icon-menu,
 .mob-menu-icon {
 	color: #fff !important;
 }
-
+ul.numerate{
+	&:not(.not-first){
+		list-style-position: inside;
+		list-style-type:decimal;
+		li{
+			list-style-position: inside;
+			list-style-type:decimal;
+		}
+	}
+	&.not-first{
+		list-style-position: inside;
+		list-style-type:decimal;
+		li:not(:first-child){
+			list-style-position: inside;
+			list-style-type:decimal;
+		}
+	}
+}
 [class^='mob-icon-']:before,
 [class*='mob-icon-']:before {
 	font-size: 28px !important;

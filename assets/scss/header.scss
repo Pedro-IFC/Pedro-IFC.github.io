@@ -8,15 +8,33 @@
     padding: 40px;
     z-index: 31;
     transition: all .3s;
+    overflow-x: hidden;
+    overflow-y: scroll;
     @media screen and (max-width: 600px) {
         width: 100vw;
+    }
+    &.larger{
+        width: 400px;
+    }
+    &.active{
+        left: 0px;
+        @media screen and (max-width: 1100px) {
+            box-shadow: 0 0 0 100vw #00000090;
+        }
+    }
+    &.right{
+        left: auto;
+        right: -100vw;
+        &.active{
+            right: 0px;
+        }
     }
     .buttons{
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
         padding-bottom: 40px;
-        gap: 16px;
+        gap: 14px;
         width: 100%;
         >div{
             width: 52px;
@@ -45,6 +63,11 @@
         gap: 16px;
         li{
             width: 100%;
+            color: $black;
+            font-family: "Poppins";
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 140%; 
             a{
                 cursor: pointer;
                 color: $black;
@@ -77,12 +100,6 @@
             }
         }
     }
-    &.active{
-        left: 0px;
-        @media screen and (max-width: 1100px) {
-            box-shadow: 0 0 0 100vw #00000090;
-        }
-    }
 }
 .menu-icon{
     width: 50px;
@@ -102,5 +119,9 @@
     &:hover{
         color: $black;
         background-color: $white;
+    }
+    &.right{
+        left: auto;
+        right: 30px
     }
 }
