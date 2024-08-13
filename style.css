@@ -1811,6 +1811,15 @@ body {
     flex-wrap: wrap;
   }
 }
+.projetos .swiper-projetos .swiper-slide .project .description .contain {
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
+  gap: 16px;
+  flex-direction: column;
+  flex-wrap: wrap;
+  min-width: 275px;
+}
 .projetos .swiper-projetos .swiper-slide .project .description a {
   padding: 8px 32px;
   border-radius: 12px;
@@ -1819,6 +1828,7 @@ body {
   font-size: 24px;
   text-transform: uppercase;
   text-decoration: none;
+  text-align: center;
   border: 1px solid var(--p-color);
   background-color: var(--p-color);
   color: var(--black);
@@ -1845,6 +1855,11 @@ body {
   text-transform: uppercase;
   font-weight: 700;
   color: var(--p-color);
+}
+@media screen and (max-width: 700px) {
+  .projetos .swiper-projetos .swiper-slide .project .description .left h2 {
+    font-size: 32px;
+  }
 }
 .projetos .swiper-projetos .swiper-slide .project .description .left b {
   color: #dc3545;

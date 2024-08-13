@@ -388,6 +388,14 @@ body {
                     @media screen and (max-width: 1100px) {
                         flex-wrap: wrap;
                     }
+                    .contain{
+                        width: fit-content;
+                        display: flex;
+                        gap: 16px;
+                        flex-direction: column;
+                        flex-wrap: wrap;
+                        min-width: 275px;
+                    }
                     a{
                         padding: 8px 32px;
                         border-radius: 12px;
@@ -396,6 +404,7 @@ body {
                         font-size: 24px;
                         text-transform: uppercase;
                         text-decoration: none;
+                        text-align: center;
                         border: 1px solid $primary-color;
                         background-color: $primary-color;
                         color: $black;
@@ -419,6 +428,9 @@ body {
                             text-transform: uppercase;
                             font-weight: 700;
                             color: $primary-color;
+                            @media screen and (max-width: 700px) {
+                                font-size: 32px;
+                            }
                         }
                         b{
                             color: $danger;
