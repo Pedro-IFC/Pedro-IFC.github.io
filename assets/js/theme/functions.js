@@ -71,6 +71,26 @@ jQuery("document").ready(function(){
       prevEl: '.swiper-button-prev',
     },
   });
+  const filters = document.querySelectorAll(".filter span");
+  const allSlides = document.querySelectorAll(".swiper-projetos .swiper-slide");
+  filters.forEach(filter => {
+      filter.addEventListener("click", () => {
+          filters.forEach(f => f.classList.remove("active"));
+          filter.classList.add("active");
+          const filterClass = filter.classList[0];
+          allSlides.forEach(slide => {
+              if (slide.classList.contains(filterClass)) {
+                slide.style.display = "block"; // Mostra o slide
+              } else {
+                slide.style.display = "none"; // Esconde o slide
+              }
+          });
+          swiperProjetos.slideTo(0);
+          swiperProjetos.update();
+          AOS.refresh();
+      });
+  });
+  filters[0].click();
   jQuery(".menu-icon").on("click", function(){
     jQuery(".lateral").addClass("active");
     jQuery(".initial-page").addClass("recuo");

@@ -1676,6 +1676,29 @@ body {
 .projetos {
   padding: 80px 0px;
 }
+.projetos .filter {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding-bottom: 30px;
+}
+.projetos .filter h3 {
+  width: 100%;
+}
+.projetos .filter span {
+  display: block;
+  padding: 4px 8px;
+  background-color: rgba(255, 240, 0, 0);
+  color: var(--p-color);
+  border: var(--p-color) 1px solid;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.projetos .filter span.active {
+  background-color: var(--p-color);
+  color: var(--white);
+}
 .projetos .container {
   width: 1100px;
   position: relative;
@@ -1725,10 +1748,6 @@ body {
 }
 .projetos .swiper-projetos .swiper-slide {
   transition: all 0.3s;
-}
-.projetos .swiper-projetos .swiper-slide.swiper-slide-active .project {
-  margin: 0px;
-  margin-bottom: 100px;
 }
 .projetos .swiper-projetos .swiper-slide .project {
   transition: all 0.3s;
@@ -1887,7 +1906,7 @@ body {
 }
 
 .certificados {
-  padding: 80px 0px;
+  padding: 40px 0px;
 }
 .certificados .container {
   width: 1000px;
@@ -2040,4 +2059,7 @@ body {
   to {
     opacity: 0;
   }
+}
+h3 {
+  color: var(--p-color);
 }

@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "cross-env": "^7.0.3",
+    "estrutura-basica": "file:",
     "laravel-mix": "^6.0.43",
     "resolve-url-loader": "^5.0.0",
     "sass": "^1.51.0",

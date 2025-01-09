@@ -277,6 +277,29 @@ body {
 }
 .projetos{
     padding: 80px 0px;
+    .filter{
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+        padding-bottom: 30px;
+        h3{
+            width: 100%;
+        }
+        span{
+            display: block;
+            padding: 4px 8px;
+            background-color: #FFF00000;
+            color: $primary-color;
+            border: $primary-color 1px solid;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all .3s;
+            &.active{
+                background-color: $primary-color;
+                color: $white;
+            }
+        }
+    }
     .container{
         width: 1100px;
         position: relative;
@@ -317,12 +340,6 @@ body {
         }
         .swiper-slide{
             transition: all .3s;
-            &.swiper-slide-active{
-                .project{
-                    margin: 0px;
-                    margin-bottom: 100px;
-                }
-            }
             .project{
                 transition: all .3s;
                 margin: 50px;
@@ -462,7 +479,7 @@ body {
     }
 }
 .certificados{
-    padding: 80px 0px;
+    padding: 40px 0px;
     .container{
         width: 1000px;
         max-width: 100%;
@@ -611,4 +628,7 @@ body {
     to {
         opacity: 0;
     }
+}
+h3{
+    color: $primary-color;
 }
