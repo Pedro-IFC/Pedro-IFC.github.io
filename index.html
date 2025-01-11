@@ -258,12 +258,19 @@
         </section>
         <section class="projetos" id="projetos">
             <div class="container" data-aos="fade-up">
-                <h2>Meus Projetos</h2>
-                <div class="filter">
-                    <h3>Filtre os projetos aqui</h3>
-                    <span class="faculdade active">Projetos da Faculdade</span>
-                    <span class="arealocal ">Projetos da Área Local</span>
-                    <span class="pessoais ">Projetos pessoais</span>
+                <div class="base">
+                    <div class="left">
+                        <h2>Meus Projetos</h2>
+                        <div class="filter">
+                            <h3>Filtre os projetos aqui</h3>
+                            <span class="faculdade active">Projetos da Faculdade</span>
+                            <span class="arealocal ">Projetos da Área Local</span>
+                            <span class="pessoais ">Projetos pessoais</span>
+                        </div>
+                    </div>
+                    <div class="right" style="max-width: 200px;">
+                        <canvas id="graficoPizza" width="400" height="400"></canvas>
+                    </div>
                 </div>
                 <div class="swiper-projetos">
                     <div class="swiper-wrapper">
@@ -354,7 +361,7 @@
                                             <div class="img">
                                                 <img src="./assets/images/postgre.svg" alt="Postgre Logo">
                                             </div>
-                                            <div class="img">
+                                            <div class="img pad">
                                                 <img src="./assets/images/git.svg" alt="Git Logo">
                                             </div>
                                         </div>
@@ -385,7 +392,7 @@
                                             <div class="img">
                                                 <img src="./assets/images/sass.svg" alt="SASS Logo">
                                             </div>
-                                            <div class="img">
+                                            <div class="img pad">
                                                 <img src="./assets/images/git.svg" alt="Git Logo">
                                             </div>
                                         </div>
@@ -407,7 +414,7 @@
                                             <div class="img">
                                                 <img src="./assets/images/java.svg" alt="Java Logo">
                                             </div>
-                                            <div class="img">
+                                            <div class="img pad">
                                                 <img src="./assets/images/git.svg" alt="Git Logo">
                                             </div>
                                         </div>
@@ -503,7 +510,7 @@
                                             <div class="img">
                                                 <img src="./assets/images/mysql.svg" alt="MySQL Logo">
                                             </div>
-                                            <div class="img">
+                                            <div class="img pad">
                                                 <img src="./assets/images/git.svg" alt="Git Logo">
                                             </div>
                                             <div class="img pad">
@@ -555,34 +562,117 @@
                         <div class="swiper-slide pessoais">
                             <div class="project">
                                 <div class="img-container">
-                                    <img src="./assets/images/projects/bluemoon.webp" alt="Website Bluemoon">
+                                    <img src="./assets/images/projects/quarkus.webp" alt="Crud next Js">
                                 </div>
                                 <div class="description">
                                     <div class="left">
-                                        <h2>Website Bluemoon</h2>
-                                        <p><b>Projeto realizado com Área Local</b></p>
+                                        <h2>API com Java Quarkus, conteinerizada e com Swagger UI para documentação</h2>
                                         <div class="tecnologias">
                                             <div class="img">
-                                                <img src="./assets/images/php.svg" alt="PHP Logo">
-                                            </div>
-                                            <div class="img">
-                                                <img src="./assets/images/js.svg" alt="JS Logo">
+                                                <img src="./assets/images/java.svg" alt="Java Logo">
                                             </div>
                                             <div class="img pad">
-                                                <img src="./assets/images/sass.svg" alt="SASS Logo">
+                                                <img src="./assets/images/quarkus.svg" alt="Quarkus Logo">
                                             </div>
-                                            <div class="img">
-                                                <img src="./assets/images/mysql.svg" alt="MySQL Logo">
+                                            <div class="img pad">
+                                                <img src="./assets/images/docker.svg" alt="Docker Logo">
                                             </div>
                                             <div class="img pad">
                                                 <img src="./assets/images/git.svg" alt="Git Logo">
                                             </div>
+                                        </div>
+                                    </div>
+                                    <a href="https://github.com/Pedro-IFC/crudnextjs" target="_blank">Ver projeto</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide pessoais">
+                            <div class="project">
+                                <div class="img-container">
+                                    <img src="./assets/images/projects/curdnextjs.webp" alt="Crud next Js">
+                                </div>
+                                <div class="description">
+                                    <div class="left">
+                                        <h2>CRUD simples de com NextJS e Firebase</h2>
+                                        <div class="tecnologias">
+                                            <div class="img">
+                                                <img src="./assets/images/js.svg" alt="JS Logo">
+                                            </div>
+                                            <div class="img">
+                                                <img src="./assets/images/react.svg" alt="React Logo">
+                                            </div>
                                             <div class="img pad">
-                                                <img src="./assets/images/wordpress.svg" alt="Wordpress Logo">
+                                                <img src="./assets/images/nextjs-icon.svg" alt="Next Logo">
+                                            </div>
+                                            <div class="img pad">
+                                                <img src="./assets/images/firebase.svg" alt="Firebase Logo">
+                                            </div>
+                                            <div class="img pad">
+                                                <img src="./assets/images/git.svg" alt="Git Logo">
                                             </div>
                                         </div>
                                     </div>
-                                    <a href="https://bluemoonmotel.com.br/" target="_blank">Ver projeto</a>
+                                    <a href="https://github.com/Pedro-IFC/crudnextjs" target="_blank">Ver projeto</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide pessoais">
+                            <div class="project">
+                                <div class="img-container">
+                                    <img src="./assets/images/projects/todoreact.webp" alt="Crud Reac e Express">
+                                </div>
+                                <div class="description">
+                                    <div class="left">
+                                        <h2>Todo App em React, Express e MongoDB</h2>
+                                        <div class="tecnologias">
+                                            <div class="img">
+                                                <img src="./assets/images/js.svg" alt="JS Logo">
+                                            </div>
+                                            <div class="img">
+                                                <img src="./assets/images/react.svg" alt="React Logo">
+                                            </div>
+                                            <div class="img pad">
+                                                <img src="./assets/images/mongodb.svg" alt="MongoDB Logo">
+                                            </div>
+                                            <div class="img pad">
+                                                <img src="./assets/images/git.svg" alt="Git Logo">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a href="https://github.com/Pedro-IFC/todoreact" target="_blank">Ver projeto</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide pessoais">
+                            <div class="project">
+                                <div class="img-container">
+                                    <img src="./assets/images/projects/laravelCrud.webp" alt="Crud Laravel">
+                                </div>
+                                <div class="description">
+                                    <div class="left">
+                                        <h2>Projeto CRUD Laravel</h2>
+                                        <div class="tecnologias">
+                                            <div class="img">
+                                                <img src="./assets/images/js.svg" alt="JS Logo">
+                                            </div>
+                                            <div class="img">
+                                                <img src="./assets/images/php.svg" alt="PHP Logo">
+                                            </div>
+                                            <div class="img">
+                                                <img src="./assets/images/laravel.svg" alt="Laravel Logo">
+                                            </div>
+                                            <div class="img">
+                                                <img src="./assets/images/mysql.svg" alt="Mysql Logo">
+                                            </div>
+                                            <div class="img pad">
+                                                <img src="./assets/images/docker.svg" alt="Docker Logo">
+                                            </div>
+                                            <div class="img pad">
+                                                <img src="./assets/images/git.svg" alt="Git Logo">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a href="https://github.com/Pedro-IFC/laravel-crud" target="_blank">Ver projeto</a>
                                 </div>
                             </div>
                         </div>
@@ -755,6 +845,7 @@
             </div>
         </footer>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>

@@ -277,6 +277,15 @@ body {
 }
 .projetos{
     padding: 80px 0px;
+    .base{
+        display: flex;
+        gap: 32px;
+        justify-content: center;
+        align-items: center;
+        @media screen and (max-width: 1000px) {
+            flex-wrap: wrap;
+        }
+    }
     .filter{
         display: flex;
         gap: 16px;

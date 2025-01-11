@@ -18,6 +18,8 @@
 /***/ (() => {
 
 jQuery("document").ready(function () {
+  var projetos = [["PHP", "JavaScript", "SASS", "MySQL", "Git", "Wordpress"], ["PHP", "Laravel", "JavaScript", "SASS", "MySQL", "Git"], ["Java", "MySQL", "PostgreSQL", "Git"], ["PHP", "JavaScript", "SASS", "Git"], ["Java", "Git"], ["PHP", "JavaScript", "SASS", "MySQL", "Git", "Wordpress"], ["PHP", "JavaScript", "SASS", "MySQL", "Git", "Wordpress"], ["Java", "MySQL", "Git", "Docker", "SpringBoot"], ["Java", "Quarkus", "Docker", "Git"], ["JavaScript", "React", "NextJS", "Firebase", "Git"], ["JavaScript", "React", "MongoDB", "Git"], ["JavaScript", "PHP", "Laravel", "MySQL", "Docker", "Git"]];
+  gerarGraficoPizza(projetos);
   loadColors();
   AOS.init();
   var sections = document.querySelectorAll('section');
@@ -231,6 +233,67 @@ function loadColors() {
     localStorage.setItem('white', "#FFFFFF");
     loadColors();
   }
+}
+function gerarGraficoPizza(projetos) {
+  var linguagensValidas = ["PHP", "Java", "Python", "JavaScript", "Quarkus", "SpringBoot", "Wordpress", "React", "Laravel"];
+  var todasAsLinguagens = projetos.flat().filter(function (linguagem) {
+    return linguagensValidas.includes(linguagem);
+  });
+  var contagemLinguagens = todasAsLinguagens.reduce(function (acc, linguagem) {
+    acc[linguagem] = (acc[linguagem] || 0) + 1;
+    return acc;
+  }, {});
+  var labels = Object.keys(contagemLinguagens);
+  var valores = Object.values(contagemLinguagens);
+  var primaryColor = '#FF4500';
+  var secondaryColor = '#333333';
+  var black = '#141414';
+  var grey = '#EEE';
+  var white = '#AAA';
+  var additionalColors = ["#cc2400", "#940006", "#5d000c", "#250012", "#000000", "#00993e", "#7c4792", "#0165a8", "#be9100", "#a02100"];
+  var backgroundColors = [primaryColor, secondaryColor, black, white, grey].concat(additionalColors);
+  var ctx = document.getElementById('graficoPizza').getContext('2d');
+  var plugins = [];
+  if (typeof ChartDataLabels !== 'undefined') {
+    plugins.push(ChartDataLabels);
+  }
+  new Chart(ctx, {
+    type: 'pie',
+    data: {
+      labels: labels,
+      datasets: [{
+        data: valores,
+        backgroundColor: backgroundColors.slice(0, labels.length) // Garantir que o número de cores corresponda ao de labels
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: {
+          display: false // Ocultar a legenda
+        },
+        tooltip: {
+          callbacks: {
+            label: function label(tooltipItem) {
+              return "".concat(tooltipItem.label, ": ").concat(tooltipItem.raw, " projetos");
+            }
+          }
+        },
+        datalabels: typeof ChartDataLabels !== 'undefined' ? {
+          color: '#FFFFFF',
+          // Cor do texto dentro do gráfico
+          font: {
+            weight: 'bold',
+            size: 14
+          },
+          formatter: function formatter(value, context) {
+            return context.chart.data.labels[context.dataIndex];
+          }
+        } : undefined
+      }
+    },
+    plugins: plugins
+  });
 }
 
 /***/ }),
