@@ -235,6 +235,9 @@ function loadColors() {
   }
 }
 function gerarGraficoPizza(projetos) {
+  if (!document.getElementById('graficoPizza')) {
+    return NULL;
+  }
   var linguagensValidas = ["PHP", "Java", "Python", "JavaScript", "Quarkus", "SpringBoot", "Wordpress", "React", "Laravel"];
   var todasAsLinguagens = projetos.flat().filter(function (linguagem) {
     return linguagensValidas.includes(linguagem);
